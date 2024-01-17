@@ -6,7 +6,7 @@
 /*   By: rihoy <rihoy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 10:32:41 by rihoy             #+#    #+#             */
-/*   Updated: 2024/01/12 17:24:10 by rihoy            ###   ########.fr       */
+/*   Updated: 2024/01/17 17:49:30 by rihoy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,14 @@ void	error_exit_all(t_stack **a, char **sent)
 {
 	free_stack(a);
 	freesplit(sent);
-	write(1, "Error\n", 6);
+	write(2, "Error\n", 6);
 	exit(1);
 }
 
 void	error_exit(t_stack **a)
 {
 	free_stack(a);
-	write(1, "Error\n", 6);
+	write(2, "Error\n", 6);
 	exit(1);
 }
 
@@ -31,7 +31,7 @@ void	error_algo(t_stack	**a, t_stack **b)
 {
 	free_stack(a);
 	free_stack(b);
-	write(1, "Error\n", 6);
+	write(2, "Error\n", 6);
 	exit(1);
 }
 
