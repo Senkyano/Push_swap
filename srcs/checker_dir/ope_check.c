@@ -6,13 +6,13 @@
 /*   By: rihoy <rihoy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 14:09:45 by rihoy             #+#    #+#             */
-/*   Updated: 2024/01/15 15:27:57 by rihoy            ###   ########.fr       */
+/*   Updated: 2024/01/17 13:02:31 by rihoy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/swaplib.h"
 
-int	ope_do(t_stack **a, t_stack **b, char *str, int	ok)
+int	ope_do(t_stack **a, t_stack **b, char *str, int ok)
 {
 	if (same_cmd(str, "pb") && ok == 0)
 		push_cmd(a, b);
@@ -44,7 +44,7 @@ int	ope_do(t_stack **a, t_stack **b, char *str, int	ok)
 int	same_cmd(char *str, char *sec)
 {
 	int	i;
-	
+
 	i = 0;
 	while (str[i] && str[i] != '\n')
 	{
@@ -57,7 +57,7 @@ int	same_cmd(char *str, char *sec)
 
 int	check_trie(t_stack **a)
 {
-	t_stack *curr;
+	t_stack	*curr;
 
 	curr = *a;
 	while (curr && curr->next)

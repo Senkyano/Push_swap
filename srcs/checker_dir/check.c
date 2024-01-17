@@ -6,7 +6,7 @@
 /*   By: rihoy <rihoy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 14:06:04 by rihoy             #+#    #+#             */
-/*   Updated: 2024/01/15 15:19:36 by rihoy            ###   ########.fr       */
+/*   Updated: 2024/01/17 13:03:27 by rihoy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,14 @@ int	main(int argc, const char **argv)
 {
 	t_stack	*a;
 	t_stack	*b;
-	int	ok;
+	int		ok;
 	char	*move;
 
+	ok = 0;
 	if (argc < 2)
 		return (0);
 	a = NULL;
 	b = NULL;
-	ok = 0;
 	build_in(&a, argv);
 	move = get_next_line(STDIN_FILENO);
 	while (move)
