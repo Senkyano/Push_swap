@@ -6,7 +6,7 @@
 #    By: rihoy <rihoy@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/11 19:09:21 by rihoy             #+#    #+#              #
-#    Updated: 2024/01/15 14:24:29 by rihoy            ###   ########.fr        #
+#    Updated: 2024/01/17 12:16:35 by rihoy            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ RM = rm -fr
 
 # Dossiers des sources
 SRC_DIR = srcs
-DIR_SWAP = push_swap
+DIR_SWAP = push_swap_dir
 DIR_BONUS = checker_dir
 
 # Couleurs

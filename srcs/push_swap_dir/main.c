@@ -6,7 +6,7 @@
 /*   By: rihoy <rihoy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 10:28:22 by rihoy             #+#    #+#             */
-/*   Updated: 2024/01/12 17:27:37 by rihoy            ###   ########.fr       */
+/*   Updated: 2024/01/17 12:23:05 by rihoy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,3 @@ void	free_all(t_stack **a, t_stack **b, t_ref ref)
 	free_stack(b);
 	free(ref.tab);
 }
-
-// void	split_good(char **sent)
-// {
-	
-// }
