@@ -6,7 +6,7 @@
 /*   By: rihoy <rihoy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 11:01:40 by rihoy             #+#    #+#             */
-/*   Updated: 2024/01/12 14:21:47 by rihoy            ###   ########.fr       */
+/*   Updated: 2024/01/18 16:48:36 by rihoy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,14 @@ int	ft_atoi(char *str, t_stack **a, char **sent)
 		neg = -1;
 		str++;
 	}
+	if (*str == '\0')
+		error_exit_all(a, sent);
 	while (*str)
 	{
 		nbr = *str - '0' + nbr * 10;
 		if (neg == -1 && nbr > 2147483648)
 			error_exit_all(a, sent);
-		else if (nbr > INT_MAX)
+		else if (neg != -1 && nbr > INT_MAX)
 			error_exit_all(a, sent);
 		str++;
 	}

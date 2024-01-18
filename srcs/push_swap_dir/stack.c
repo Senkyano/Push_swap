@@ -6,7 +6,7 @@
 /*   By: rihoy <rihoy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 10:34:41 by rihoy             #+#    #+#             */
-/*   Updated: 2024/01/17 13:01:40 by rihoy            ###   ########.fr       */
+/*   Updated: 2024/01/18 16:37:20 by rihoy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,8 @@ void	build_in(t_stack **a, const char **argv)
 	{
 		in.sent = ft_split(argv[in.i], a);
 		in.j = -1;
+		if (argv[in.i][0] == 0)
+			error_exit_all(a, in.sent);
 		while (in.sent[++in.j])
 		{
 			if (onlydigit(in.sent[in.j]))
