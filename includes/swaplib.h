@@ -6,19 +6,19 @@
 /*   By: rihoy <rihoy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 10:28:34 by rihoy             #+#    #+#             */
-/*   Updated: 2024/01/15 15:31:10 by rihoy            ###   ########.fr       */
+/*   Updated: 2024/02/13 14:37:37 by rihoy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SWAPLIB_H
 # define SWAPLIB_H
 
-#include <math.h>
-#include <stdio.h>
-#include <unistd.h>
-#include <stdlib.h>
-#include <stdbool.h>
-#include <limits.h>
+# include <math.h>
+# include <stdio.h>
+# include <unistd.h>
+# include <stdlib.h>
+# include <stdbool.h>
+# include <limits.h>
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 42
@@ -28,8 +28,8 @@
 // STACK
 typedef struct s_stack
 {
-	int	nbr;
-	char	pile;
+	int				nbr;
+	char			pile;
 	struct s_stack	*next;
 }	t_stack;
 // STACK
@@ -61,7 +61,7 @@ int			check_trie(t_stack **a);
 
 /* ************************************************************************** */
 // DATA
-typedef	struct s_data
+typedef struct s_data
 {
 	int		i;
 	int		j;
@@ -73,12 +73,12 @@ typedef	struct s_data
 
 /* ************************************************************************** */
 // REF
-typedef	struct	s_ref
+typedef struct s_ref
 {
 	int	*tab;
 	int	size;
 	int	half_taff;
-	int non_taff;
+	int	non_taff;
 	int	ind_mid;
 	int	start_taff;
 	int	end_taff;
@@ -150,8 +150,5 @@ char		*ft_aftline(char *curr);
 char		*ft_line(char *curr);
 int			ft_srch(char *src, char c);
 char		*ft_readfile(int fd, char *rest);
-
-
-
 
 #endif
