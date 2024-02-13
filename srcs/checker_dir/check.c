@@ -6,13 +6,14 @@
 /*   By: rihoy <rihoy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 14:06:04 by rihoy             #+#    #+#             */
-/*   Updated: 2024/02/13 14:33:55 by rihoy            ###   ########.fr       */
+/*   Updated: 2024/02/13 14:44:53 by rihoy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/swaplib.h"
 
-void	check_trie(t_stack **a, int ok);
+static void	bonus_trie(t_stack **a, int ok);
+static void	free_check(t_stack **a, t_stack **b);
 
 int	main(int argc, const char **argv)
 {
@@ -27,6 +28,8 @@ int	main(int argc, const char **argv)
 	a = NULL;
 	b = NULL;
 	build_in(&a, argv);
+	if (same_value(&a))
+		error_exit(&a);
 	move = get_next_line(STDIN_FILENO);
 	while (move)
 	{
@@ -36,17 +39,22 @@ int	main(int argc, const char **argv)
 	}
 	if (move != NULL)
 		free(move);
-	check_trie(&a, ok);
-	free_stack(&a);
-	free_stack(&b);
+	bonus_trie(&a, ok);
+	free_check(&a, &b);
 	return (0);
 }
 
-void	check_trie(t_stack **a, int ok)
+static void	free_check(t_stack **a, t_stack **b)
 {
-	if (check_trie(&a) && ok == 0)
+	free_stack(a);
+	free_stack(b);
+}
+
+static void	bonus_trie(t_stack **a, int ok)
+{
+	if (check_trie(a) && ok == 0)
 		write(1, "OK\n", 3);
-	else if (check_trie(&a) == 0 && ok == 0)
+	else if (check_trie(a) == 0 && ok == 0)
 		write(1, "KO\n", 3);
 	else if (ok == 1)
 		write(1, "Error\n", 6);
